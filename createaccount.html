@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Create Account | Collab | Projects Made Easy</title>
+    </head>
+    <body>
+        <form id="create-account-form">
+            <p>First Name</p>
+            <input type="text" name="firstname"><br>
+            <p>Last Name</p>
+            <input type="text" name="lastname">
+            <p>Email</p>
+            <input type="text" name="email"><br>
+            <p>Password</p>
+            <input type="password" name="pw"><br>
+            <button>Create Account</button>
+        </form>
+
+        <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDkNArbZ1tTO99QqFnwCmcY3n1TSsYjWiI",
+                authDomain: "collab-d0465.firebaseapp.com",
+                databaseURL: "https://collab-d0465.firebaseio.com",
+                projectId: "collab-d0465",
+                storageBucket: "collab-d0465.appspot.com",
+                messagingSenderId: "461669539934"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </body>
+</html>
