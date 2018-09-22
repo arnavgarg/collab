@@ -1,20 +1,7 @@
 <html>
     <head>
         <title>Create Account | Collab | Projects Made Easy</title>
-    </head>
-    <body>
-        <form id="create-account-form">
-            <p>First Name</p>
-            <input type="text" name="firstname"><br>
-            <p>Last Name</p>
-            <input type="text" name="lastname">
-            <p>Email</p>
-            <input type="text" name="email"><br>
-            <p>Password</p>
-            <input type="password" name="pw"><br>
-            <button>Create Account</button>
-        </form>
-
+        
         <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
         <script>
             // Initialize Firebase
@@ -28,5 +15,19 @@
             };
             firebase.initializeApp(config);
         </script>
+        <script src="js/createaccount.js"></script>
+    </head>
+    <body>
+        <div id="create-account-form">
+            <p>First Name</p>
+            <input type="text" id="firstname"><br>
+            <p>Last Name</p>
+            <input type="text" id="lastname">
+            <p>Email</p>
+            <input type="text" id="email"><br>
+            <p>Password</p>
+            <input type="password" id="pw"><br>
+            <button onclick="createAccount()">Create Account</button>
+        </div>             
     </body>
 </html>
