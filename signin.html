@@ -26,13 +26,28 @@
 	<link rel="stylesheet" type="text/css" href="style/thirdparty/util.css">
 	<link rel="stylesheet" type="text/css" href="style/thirdparty/main.css">
 <!--===============================================================================================-->
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDkNArbZ1tTO99QqFnwCmcY3n1TSsYjWiI",
+			authDomain: "collab-d0465.firebaseapp.com",
+			databaseURL: "https://collab-d0465.firebaseio.com",
+			projectId: "collab-d0465",
+			storageBucket: "collab-d0465.appspot.com",
+			messagingSenderId: "461669539934"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="js/signin.js"></script>
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<div class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						Collab
 					</span>
@@ -40,18 +55,18 @@
 						<!--<img src="images/avatar-01.jpg" alt="AVATAR">-->
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter Email">
-						<input class="input100" type="text" name="username">
-						<span class="focus-input100" data-placeholder="Username"></span>
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter email">
+						<input class="input100" type="text" id="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" id="pw">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="signin()">
 							Login
 						</button>
 					</div>
@@ -77,7 +92,7 @@
 							</a>
 						</li>
 					</ul>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>
