@@ -26,6 +26,21 @@
 	<link rel="stylesheet" type="text/css" href="style/thirdparty/util.css">
 	<link rel="stylesheet" type="text/css" href="style/thirdparty/main.css">
 <!--===============================================================================================-->
+  
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDkNArbZ1tTO99QqFnwCmcY3n1TSsYjWiI",
+                authDomain: "collab-d0465.firebaseapp.com",
+                databaseURL: "https://collab-d0465.firebaseio.com",
+                projectId: "collab-d0465",
+                storageBucket: "collab-d0465.appspot.com",
+                messagingSenderId: "461669539934"
+            };
+            firebase.initializeApp(config);
+  </script>
+  <script src="js/createaccount.js"></script>
 </head>
 <body>
 
@@ -38,22 +53,22 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate = "First Name">
-						<input class="input100" type="text" name="first">
+						<input class="input100" type="text" id="firstname">
 						<span class="focus-input100" data-placeholder="First Name"></span>
 					</div>
 
           <div class="wrap-input100 validate-input m-b-50" data-validate = "Last Name">
-						<input class="input100" type="text" name="last">
+						<input class="input100" type="text" id="lastname">
 						<span class="focus-input100" data-placeholder="Last Name"></span>
 					</div>
 
           <div class="wrap-input100 validate-input m-b-50" data-validate = "Email">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" id="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" id="pw">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
@@ -63,7 +78,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="createAccount()">
 							Sign Up
 						</button>
 					</div>
@@ -116,3 +131,4 @@
 
 </body>
 </html>
+
