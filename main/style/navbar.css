@@ -52,7 +52,7 @@
 #a_header {
   font-size: 200%;
   color: #57b846;
-  margin: 3% 10% 1% 35%;
+  margin: 3% 10% 3% 35%;
 }
 
 #new_message {
@@ -79,4 +79,20 @@
 
 #assignment_list div.item {
   margin-top: 3%;
+}
+
+#group_list {
+  margin-left: 25%;
+}
+
+#group_list select {
+  width: 20%;
+  height: 10%;
+  margin-top: 3%;
+}
+
+#g_header {
+  font-size: 200%;
+  color: #57b846;
+  margin: 3% 10% 3% 11%;
 }

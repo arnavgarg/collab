@@ -5,7 +5,7 @@
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
-            window.location.replace("index.html");
+            window.location.replace("../index.html");
         }
     });
   </script>
@@ -73,18 +73,22 @@
     <div id="assignment_list" class="ui relaxed divided list">
       <div class="item">
         <div class="content">
-          <a class="header">Assignment 1: Speed Dating</a>
+          <a class="header" href="new_assignment.html">Create New Assignment</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <a class="header" href="edit.html">Assignment 1: Speed Dating</a>
           <div class="description">Due 9/1/18</div>
         </div>
       </div>
       <div class="item">
         <div class="content">
-          <a class="header">Assignment 2: Cornell Notes</a>
+          <a class="header" href="edit.html">Assignment 2: Cornell Notes</a>
           <div class="description">Due 9/2/18</div>
         </div>
       </div>
     </div>
   </center>
-
 
 </body>
