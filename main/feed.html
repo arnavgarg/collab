@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Collab</title>
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+            window.location.replace("index.html");
+        }
+    });
+</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/navbar.css">
+</head>
+
+<body>
+  <div id="vertical-nav" class="ui inverted vertical menu">
+    <h1>Classes</h1>
+    <a class="item">
+      <p>Period 1: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 2: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 3: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 4: AP Calculus BC</p>
+    </a>
+    <a class="item">
+      <p>Period 5: AP Calculus BC</p>
+    </a>
+    <a class="item">
+      <p>Period 6: AP Calculus BC</p>
+    </a>
+    <a class="item">
+      <p>Add New Class</p>
+    </a>
+  </div>
+
+  <div id="horizontal-nav" class="ui secondary pointing menu">
+    <a class="item">
+      <p>Feed</p>
+    </a>
+    <a class="item">
+      <p>Assignments</p>
+    </a>
+    <a class="item">
+      <p>Direct</p>
+    </a>
+    <div class="right menu">
+      <a class="ui item">
+        <p>Logout</p>
+      </a>
+    </div>
+  </div>
+</body>
