@@ -6,8 +6,12 @@ function signin() {
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        if (error) {
-            console.log(error.code + ": " + error.message);
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+            return;
+        } else {
+            alert(errorMessage);
         }
     });
+    window.location.replace("main/feed.html");
 }
