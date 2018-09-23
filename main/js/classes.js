@@ -1,6 +1,4 @@
-const db = firebase.firestore();
-db.settings({timestampsInSnapshots: true});
-
+var selected;
 var teacherName, UID;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -51,29 +49,24 @@ function createClass(name) {
 
 function newClassClicked() {
     var name = prompt("Enter Class Name");
+    if (name == null) return;
     createClass(name);
 }
 
 function renderClassMenu() {
-    var names = new Array(0);
     db.collection('classes').where("teacher", "==", UID).get().then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-            names.push(doc.data().title);
-        });
-        
-        if (names == null) {
-            console.log("NULL");
-            return;
-        };
-        var nav = document.getElementById("vertical-nav");
-        for (var i = 0; i < names.length; i++) {
-            console.log(names[i]);
+            var name = doc.data().title;
+            var nav = document.getElementById("vertical-nav");
             var item = document.createElement("a");
-            item.id = "item";
+            item.className = "item";
+            item.id = doc.id;
+            item.onclick = function(){classSelected(this.id)};
             var p = document.createElement("p");
-            p.innerHTML = names[i];
+            p.innerHTML = name;
             item.appendChild(p);
             nav.appendChild(item);
-        }
+        });
     });
 }
+
