@@ -1,8 +1,9 @@
 #vertical-nav {
-  height: 100%;
+  height: 110%;
   width: 25%;
   border-radius: 0px;
   float: left;
+  position: fixed;
 }
 
 #vertical-nav p {
@@ -23,19 +24,42 @@
 #horizontal-nav {
   height: 7%;
   width: 75%;
-  background-color: #57b846;
+  background-color: #1b1c1d;
   border-radius: 0px;
   float: right;
   position: relative;
-  padding: 0px;
+  margin-left: 25%;
   margin-top: 0px;
   top: 0;
   z-index: -999;
 }
 
-#horizontal-nav p {
+#horizontal-nav button {
   text-align: center;
   font-size: 100%;
+  background-color: #1b1c1d;
   color: white;
+  border: 0px;
   padding: 20px 105px 8px 105px;
+}
+
+#header {
+  font-size: 200%;
+  color: #57b846;
+  margin: 3% 10% 1% 29%;
+}
+
+#new_message {
+  width: 55%;
+  font-size: 100%;
+  color: black;
+  margin: 1% 10% 1% 35%;
+}
+
+#post {
+  word-wrap: break-word;
+  color: gray;
+  width: 55%;
+  height: 15%;
+  margin: 1% 10% 1% 35%;
 }

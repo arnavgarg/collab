@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Collab</title>
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+            window.location.replace("index.html");
+        }
+    });
+</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/navbar.css">
+</head>
+
+<body>
+  <div id="vertical-nav" class="ui inverted vertical menu">
+    <h1>Classes</h1>
+    <a class="item">
+      <p>Add New Class</p>
+    </a>
+    <a class="item">
+      <p>Period 1: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 2: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 3: Honors Precalculus</p>
+    </a>
+    <a class="item">
+      <p>Period 4: AP Calculus BC</p>
+    </a>
+    <a class="item">
+      <p>Period 5: AP Calculus BC</p>
+    </a>
+    <a class="item">
+      <p>Period 6: AP Calculus BC</p>
+    </a>
+  </div>
+
+  <style>
+    #horizontal_nav_p {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    #horizontal_nav_p a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1.2% 9.8%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+  /* Change the color of links on hover */
+  #horizontal_nav_p a:hover {
+    background-color: #57b846;
+    color: white;
+  }
+
+/* Add a color to the active/current link */
+  #horizontal_nav_p a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+
+  <div id="horizontal_nav_p" class="menu">
+    <a class="" href="feed.html">Feed</a>
+    <a class="" href="assignments.html">Assignments</a>
+    <a class="" href="direct.html">Direct</a>
+    <a class="" href="logout.html">Logout</a>
+  </div>
+
+  <center><h2 id="header" class="ui header">
+    <i class="rocketchat icon"></i>
+    <div class="content">
+      Direct
+    </div>
+  </h2></center>
+
+</body>
