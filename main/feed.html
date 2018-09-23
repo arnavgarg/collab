@@ -17,21 +17,29 @@
   </script>
   <!-- <script src="js/createaccount.js"></script> -->
   <script>
-//     firebase.auth().onAuthStateChanged(function(user) {
-//         if (!user) {
-//             window.location.replace("index.html");
-//         }
-//     });
-</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/navbar.css">
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+            window.location.replace("index.html");
+        }
+    });
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js">
+  </script>
+    <link rel="stylesheet" type="text/css" href="style/navbar.css">
 </head>
 
 <body>
   <div id="vertical-nav" class="ui inverted vertical menu">
     <h1>Classes</h1>
-    <!-- <a class="item">
+    <a class="item">
+      <p>Add New Class</p>
+    </a>
+    <a class="item">
       <p>Period 1: Honors Precalculus</p>
     </a>
     <a class="item">
@@ -48,27 +56,66 @@
     </a>
     <a class="item">
       <p>Period 6: AP Calculus BC</p>
-    </a> -->
-    <a class="item" onclick="newClassClicked()">
-      <p>Add New Class</p>
     </a>
   </div>
 
-  <div id="horizontal-nav" class="ui secondary pointing menu">
-    <a class="item">
-      <p>Feed</p>
-    </a>
-    <a class="item">
-      <p>Assignments</p>
-    </a>
-    <a class="item">
-      <p>Direct</p>
-    </a>
-    <div class="right menu">
-      <a class="ui item">
-        <p>Logout</p>
-      </a>
+  <style>
+    #horizontal_nav_p {
+      background-color: #333;
+      overflow: hidden;
+      margin-left: 25%;
+    }
+
+    #horizontal_nav_p a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 1.2% 9.8%;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+  /* Change the color of links on hover */
+  #horizontal_nav_p a:hover {
+    background-color: #57b846;
+    color: white;
+  }
+
+/* Add a color to the active/current link */
+  #horizontal_nav_p a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+
+  <div id="horizontal_nav_p" class="menu">
+    <a class="" href="feed.html">Feed</a>
+    <a class="" href="assignments.html">Assignments</a>
+    <a class="" href="direct.html">Direct</a>
+    <a class="" href="logout.html">Logout</a>
+  </div>
+
+  <center><h2 id="header" class="ui header">
+    <i class="sort amount down icon"></i>
+    <div class="content">
+      Feed
     </div>
+  </h2>
+
+  <div id="new_message" class="ui input">
+    <input type="text" placeholder="Enter message">
+  </div></center>
+
+  <div id="feed">
+    <div id="post" class="ui segment">
+      <p>messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage</p>
+      <p>Posted: **date**</p>
+    </div>
+    <div id="post" class="ui segment">
+      <p>messagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessagemessage</p>
+      <p>Posted: **date**</p>
+    </div>
+    
   </div>
   <script src="js/classes.js"></script>
 </body>
