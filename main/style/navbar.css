@@ -1,0 +1,41 @@
+#vertical-nav {
+  height: 100%;
+  width: 25%;
+  border-radius: 0px;
+  float: left;
+}
+
+#vertical-nav p {
+  text-align: center;
+  font-size: 130%;
+  color: white;
+  padding: 20px;
+}
+
+#vertical-nav h1 {
+  color: white;
+  text-align: center;
+  font-size: 200%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+#horizontal-nav {
+  height: 7%;
+  width: 75%;
+  background-color: #57b846;
+  border-radius: 0px;
+  float: right;
+  position: relative;
+  padding: 0px;
+  margin-top: 0px;
+  top: 0;
+  z-index: -999;
+}
+
+#horizontal-nav p {
+  text-align: center;
+  font-size: 100%;
+  color: white;
+  padding: 20px 105px 8px 105px;
+}
