@@ -49,6 +49,12 @@
   margin: 3% 10% 1% 29%;
 }
 
+#a_header {
+  font-size: 200%;
+  color: #57b846;
+  margin: 3% 10% 1% 35%;
+}
+
 #new_message {
   width: 55%;
   font-size: 100%;
@@ -62,4 +68,15 @@
   width: 55%;
   height: 15%;
   margin: 1% 10% 1% 35%;
+}
+
+#assignment_list {
+  word-wrap: break-word;
+  width: 55%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+#assignment_list div.item {
+  margin-top: 3%;
 }

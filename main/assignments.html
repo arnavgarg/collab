@@ -8,10 +8,14 @@
             window.location.replace("index.html");
         }
     });
-</script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/navbar.css">
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js">
+  </script>
+    <link rel="stylesheet" type="text/css" href="style/navbar.css">
 </head>
 
 <body>
@@ -20,30 +24,13 @@
     <a class="item">
       <p>Add New Class</p>
     </a>
-    <a class="item">
-      <p>Period 1: Honors Precalculus</p>
-    </a>
-    <a class="item">
-      <p>Period 2: Honors Precalculus</p>
-    </a>
-    <a class="item">
-      <p>Period 3: Honors Precalculus</p>
-    </a>
-    <a class="item">
-      <p>Period 4: AP Calculus BC</p>
-    </a>
-    <a class="item">
-      <p>Period 5: AP Calculus BC</p>
-    </a>
-    <a class="item">
-      <p>Period 6: AP Calculus BC</p>
-    </a>
   </div>
 
   <style>
     #horizontal_nav_p {
       background-color: #333;
       overflow: hidden;
+      margin-left: 25%;
     }
 
     #horizontal_nav_p a {
@@ -75,11 +62,29 @@
     <a class="" href="logout.html">Logout</a>
   </div>
 
-  <center><h2 id="header" class="ui header">
-    <i class="edit icon"></i>
-    <div class="content">
-      Assignments
+  <center>
+    <h2 id="a_header" class="ui header">
+      <i class="edit icon"></i>
+      <div class="content">
+        Assignments
+      </div>
+    </h2>
+
+    <div id="assignment_list" class="ui relaxed divided list">
+      <div class="item">
+        <div class="content">
+          <a class="header">Assignment 1: Speed Dating</a>
+          <div class="description">Due 9/1/18</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <a class="header">Assignment 2: Cornell Notes</a>
+          <div class="description">Due 9/2/18</div>
+        </div>
+      </div>
     </div>
-  </h2></center>
+  </center>
+
 
 </body>
