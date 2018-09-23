@@ -8,9 +8,10 @@ function signin() {
 
         if (errorCode === 'auth/wrong-password') {
             alert('Wrong password.');
-            return;
-        } else {
+            fail;
+        } else if (errorCode != null) {
             alert(errorMessage);
+            fail;
         }
     });
     window.location.replace("main/feed.html");

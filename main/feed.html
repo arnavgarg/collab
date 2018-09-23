@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <title>Collab</title>
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyDkNArbZ1tTO99QqFnwCmcY3n1TSsYjWiI",
+		authDomain: "collab-d0465.firebaseapp.com",
+		databaseURL: "https://collab-d0465.firebaseio.com",
+		projectId: "collab-d0465",
+		storageBucket: "collab-d0465.appspot.com",
+		messagingSenderId: "461669539934"
+	};
+	firebase.initializeApp(config);
+  </script>
+  <!-- <script src="js/createaccount.js"></script> -->
   <script>
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-            window.location.replace("index.html");
-        }
-    });
+//     firebase.auth().onAuthStateChanged(function(user) {
+//         if (!user) {
+//             window.location.replace("index.html");
+//         }
+//     });
 </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js"></script>
@@ -17,7 +31,7 @@
 <body>
   <div id="vertical-nav" class="ui inverted vertical menu">
     <h1>Classes</h1>
-    <a class="item">
+    <!-- <a class="item">
       <p>Period 1: Honors Precalculus</p>
     </a>
     <a class="item">
@@ -34,8 +48,8 @@
     </a>
     <a class="item">
       <p>Period 6: AP Calculus BC</p>
-    </a>
-    <a class="item">
+    </a> -->
+    <a class="item" onclick="newClassClicked()">
       <p>Add New Class</p>
     </a>
   </div>
@@ -56,4 +70,5 @@
       </a>
     </div>
   </div>
+  <script src="js/classes.js"></script>
 </body>
