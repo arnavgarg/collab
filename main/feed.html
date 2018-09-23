@@ -2,6 +2,19 @@
 <html lang="en">
 <head>
   <title>Collab</title>
+  <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyDkNArbZ1tTO99QqFnwCmcY3n1TSsYjWiI",
+		authDomain: "collab-d0465.firebaseapp.com",
+		databaseURL: "https://collab-d0465.firebaseio.com",
+		projectId: "collab-d0465",
+		storageBucket: "collab-d0465.appspot.com",
+		messagingSenderId: "461669539934"
+	};
+	firebase.initializeApp(config);
+  </script>
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
@@ -9,6 +22,8 @@
         }
     });
   </script>
+  <script src="js/classes.js"></script>
+  <script src="js/feed.js"></script>
 
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -22,7 +37,7 @@
 <body>
   <div id="vertical-nav" class="ui inverted vertical menu">
     <h1>Classes</h1>
-    <a class="item">
+    <a class="item" onclick="newClassClicked()">
       <p>Add New Class</p>
     </a>
   </div>
@@ -71,6 +86,7 @@
       </div>
     </h2>
 
+<<<<<<< HEAD
     <div id="new_message" class="ui input">
       <input type="text" placeholder="Enter message">
     </div>
@@ -88,4 +104,11 @@
 
   </div>
 
+=======
+  <div id="new_message" class="ui input">
+    <h2>No class selected</h2>
+  </div></center>
+
+  <div id="feed"></div>
+>>>>>>> 357807cfe5d9c334e0f07ef519b376dbeb1d2e8e
 </body>

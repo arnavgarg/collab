@@ -1,8 +1,18 @@
-const db = firebase.firestore();
-db.settings({timestampsInSnapshots: true});
+var selected;
+var teacherName, UID;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log("user signed in")
+        UID = firebase.auth().currentUser.uid      
+        teachRef =  db.collection('teachers').doc(UID).get().then((doc) => {
+            teacherName = doc.data().first + " " + doc.data().last;
+        });
 
-const email = firebase.auth().currentUser.email;
-const teachRef =  db.collection('teachers').where("email", "==", email).get();
+        renderClassMenu();
+    } else {
+        console.log("user not signed in")
+    }
+});
 
 function generateCode() {
     var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,47 +23,50 @@ function generateCode() {
         if (i == 1 || i == 3) {
             code += letters[Math.floor(Math.random() * 26)];
         } else {
-            code += numbers[Math.floor(Math.randon() * 10)];
+            code += numbers[Math.floor(Math.random() * 10)];
         }
     }
     return code;
 }
 
-function createClass() {
+function createClass(name) {
     var code = generateCode();
-    while (true) {
-        db.collection('classes').doc(code).get().then((snapshot) => {
-            if (!snapshot.exists) break;
-        });
-        code = generateCode();
-    }
-
-    var name = "test";
-    db.collection('classes').doc(code).set({
-        name: name,
-        teacher: teachRef
-    });
+    var exists = true;    
+    db.collection('classes').doc(code).get().then((snapshot) => {
+        if (!snapshot.exists) {
+            // doesn't exist, proceed
+            console.log(code);
+            db.collection('classes').doc(code).set({
+                title: name,
+                teacherName: teacherName,
+                teacher: UID
+            });
+        } else {
+            createClass(name);
+        }
+    });  
 }
 
-function getAllClassNames(email) {
-    var names = [];
-    db.collection('classes').where("teacher", "==", teachRef).get().then((snapshot) => {
+function newClassClicked() {
+    var name = prompt("Enter Class Name");
+    if (name == null) return;
+    createClass(name);
+}
+
+function renderClassMenu() {
+    db.collection('classes').where("teacher", "==", UID).get().then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-            names.push(doc.data().name);
+            var name = doc.data().title;
+            var nav = document.getElementById("vertical-nav");
+            var item = document.createElement("a");
+            item.className = "item";
+            item.id = doc.id;
+            item.onclick = function(){classSelected(this.id)};
+            var p = document.createElement("p");
+            p.innerHTML = name;
+            item.appendChild(p);
+            nav.appendChild(item);
         });
-        return names;
     });
 }
 
-renderClassMenu() {
-    var names = getAllClassNames(email);
-    var nav = document.getElementById("vertical-nav");
-    for (var i = 0; i < names.length; i++) {
-        var item = document.createElement("a");
-        item.id = "item";
-        var p = document.createElement("p");
-        p.innerHTML = names[i];
-        item.appendChild(p);
-        nav.appendChild(item);
-    }
-}
